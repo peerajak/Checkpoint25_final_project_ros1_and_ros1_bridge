@@ -76,7 +76,7 @@ expect not set.
 export ROS_DOMAIN_ID=2
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
-source ~/ros1_ws/source devel/setup.bash
+source ~/ros1_ws/devel/setup.bash
 roslaunch launch_cp25_ros1 ros1_tf2_webbridge.launch.xml
 ```
 
@@ -92,6 +92,7 @@ expect not set.
 export ROS_DOMAIN_ID=2
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
+source install/setup.bash 
 ros2 run ros1_bridge dynamic_bridge
 ```
 
