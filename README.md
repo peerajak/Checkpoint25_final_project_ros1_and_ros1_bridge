@@ -67,9 +67,20 @@ source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
 
 ### Terminal 3: all ros1 launch
 
+Install dependencies
+
+```
+sudo apt update
+sudo apt install libpoco-dev
+sudo apt install liblog4cxx-dev
+sudo pip install defusexml
+sudo pip install autobahn
+```
+
 Make sure that there is no ROS environment
 
 ```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
 echo $ROS_DISTRO
 ```
 expect not set.
@@ -87,6 +98,9 @@ roslaunch launch_cp25_ros1 ros1_tf2_webbridge.launch.xml
 ### Terminal 4: ros2's ros1_bridge
 
 ```
+unset ROS_VERSION PKG_CONFIG_PATH ROS_PYTHON_VERSION ROS_PACKAGE_PATH ROSLISP_PACKAGE_DIRECTORIES PWD ROS_DOMAIN_ID \
+ROS_ETC_DIR AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PYTHONPATH ROSCONSOLE_CONFIG_FILE LD_LIBRARY_PATH \
+ROS_LOCALHOST_ONLY SOURCE_ROS1_WS SELECTED_ROS_DISTRO ROS_ROOT ROS_DISTRO SOURCE_ROS2_WS SLOT_ROSBRIDGE_PORT
 echo $ROS_DISTRO
 ```
 expect not set.
@@ -106,17 +120,13 @@ cd ~/MyRobotics/Checkpoint25/Checkpoint25_final_project/cp25_webapp
 python3 -m http.server 7000
 ```
 
-Chrome Browser
 
-goto 
+### Terminal 6: addresses
 
-http://localhost:7000
-
-input on the Rosbridge address text box
-
-ws://localhost:9090
-
-
+```
+rosbridge_address
+webpage_address
+```
 
 ## building 
 
