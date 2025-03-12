@@ -71,10 +71,9 @@ Install dependencies
 
 ```
 sudo apt update
-sudo apt install libpoco-dev
-sudo apt install liblog4cxx-dev
-sudo pip install defusexml
-sudo pip install autobahn
+sudo apt install libpoco-dev liblog4cxx-dev -y
+pip install autobahn
+pip install defusedxml
 ```
 
 Make sure that there is no ROS environment
@@ -116,7 +115,7 @@ ros2 run ros1_bridge dynamic_bridge
 ### Terminal 5: Web App
 
 ```
-cd ~/MyRobotics/Checkpoint25/Checkpoint25_final_project/cp25_webapp
+cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_webapp
 python3 -m http.server 7000
 ```
 
