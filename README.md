@@ -29,7 +29,7 @@ colcon build --packages-select ros1_bridge
 git clone -b master https://github.com/ros2/ros1_bridge
 ```
 
-# Real Usage on Checkpoint 25, the construct
+## simulation Robot
 
 
 ### Terminal 1: simulator
@@ -56,7 +56,8 @@ Make sure that there is no ROS environment
 ```
 echo $ROS_DISTRO
 ```
-expect not set.
+expect 
+humble
 
 
 ```
@@ -152,6 +153,86 @@ source ~/ros1_ws/source devel/setup.bash
 colcon build --packages-select ros1_bridge
 ```
 
+## Real Robot
+
+### Terminal 1: all ros2 launches
+
+Make sure that there is no ROS environment
+
+```
+echo $ROS_DISTRO
+```
+expect 
+humble
+
+
+```
+export ROS_DOMAIN_ID=2
+cd ~/ros2_ws
+source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_realrobot.launch.py
+```
+
+### Terminal 2: all ros1 launches
+Install dependencies
+
+```
+sudo apt update
+sudo apt install libpoco-dev liblog4cxx-dev -y
+pip install autobahn
+pip install defusedxml
+pip install pycryptodomex gnupg
+```
+
+Make sure that there is no ROS environment
+
+```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
+echo $ROS_DISTRO
+```
+expect not set.
+
+
+```
+export ROS_DOMAIN_ID=2
+cd ~/ros1_ws
+source ~/ros1_source_ws/devel_isolated/setup.bash 
+source ~/ros1_ws/devel/setup.bash
+roslaunch launch_cp25_ros1 ros1_realrobot_tf2_webbridge.launch.xml
+```
+
+### Terminal 3 : ros1_bridge
+
+```
+unset ROS_VERSION PKG_CONFIG_PATH ROS_PYTHON_VERSION ROS_PACKAGE_PATH ROSLISP_PACKAGE_DIRECTORIES PWD ROS_DOMAIN_ID \
+ROS_ETC_DIR AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PYTHONPATH ROSCONSOLE_CONFIG_FILE LD_LIBRARY_PATH \
+ROS_LOCALHOST_ONLY SOURCE_ROS1_WS SELECTED_ROS_DISTRO ROS_ROOT ROS_DISTRO SOURCE_ROS2_WS SLOT_ROSBRIDGE_PORT
+echo $ROS_DISTRO
+```
+expect not set.
+
+```
+export ROS_DOMAIN_ID=2
+cd ~/ros2_ws_ros1_bridge/
+source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
+source install/setup.bash 
+ros2 run ros1_bridge dynamic_bridge
+```
+
+
+### Terminal 4: Web App
+
+```
+cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_webapp
+python3 -m http.server 7000
+```
+
+
+### Terminal 5: addresses
+
+```
+rosbridge_address
+webpage_address
+```
 
 
 # ROS1_bridge on Ubuntu Jammy with ROS2 humble, and ROS1 noetic
