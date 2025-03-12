@@ -222,7 +222,7 @@ ros2 run ros1_bridge dynamic_bridge
 ### Terminal 4: Web App
 
 ```
-cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_webapp
+cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_realrobot_webapp
 python3 -m http.server 7000
 ```
 
