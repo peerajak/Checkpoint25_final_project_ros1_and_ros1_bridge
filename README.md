@@ -43,7 +43,7 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash
 ros2 launch the_construct_office_gazebo starbots_ur3e.launch.xml
@@ -61,7 +61,7 @@ humble
 
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
 ```
@@ -87,7 +87,6 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -106,7 +105,6 @@ echo $ROS_DISTRO
 expect not set.
 
 ```
-export ROS_DOMAIN_ID=2
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
@@ -167,7 +165,6 @@ humble
 
 
 ```
-export ROS_DOMAIN_ID=2
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_realrobot.launch.py
 ```
@@ -177,7 +174,7 @@ Install dependencies
 
 ```
 sudo apt update
-sudo apt install libpoco-dev liblog4cxx-dev -y
+sudo apt install libpoco-dev liblog4cxx-dev libturbojpeg* -y
 pip install autobahn
 pip install defusedxml
 pip install pycryptodomex gnupg
@@ -193,7 +190,6 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -211,7 +207,6 @@ echo $ROS_DISTRO
 expect not set.
 
 ```
-export ROS_DOMAIN_ID=2
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
