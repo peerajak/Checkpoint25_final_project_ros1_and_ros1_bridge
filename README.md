@@ -61,7 +61,6 @@ humble
 
 
 ```
-
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
 ```
@@ -72,9 +71,10 @@ Install dependencies
 
 ```
 sudo apt update
-sudo apt install libpoco-dev liblog4cxx-dev -y
+sudo apt install libpoco-dev liblog4cxx-dev libturbojpeg* -y
 pip install autobahn
 pip install defusedxml
+pip install pycryptodomex gnupg
 ```
 
 Make sure that there is no ROS environment
@@ -108,7 +108,7 @@ expect not set.
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
-ros2 run ros1_bridge dynamic_bridge
+ros2 run ros1_bridge parameter_bridge
 ```
 
 ### Terminal 5: Web App
@@ -210,7 +210,7 @@ expect not set.
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
-ros2 run ros1_bridge dynamic_bridge
+ros2 run ros1_bridge parameter_bridge
 ```
 
 

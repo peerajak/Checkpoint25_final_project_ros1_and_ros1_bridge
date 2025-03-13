@@ -9,7 +9,7 @@
   <rosparam command="load" file="$(find launch_cp25_ros1)/config/bridge.yaml" />
 
 
-  <!-- roslaunch ur_description  robot_description.launch   -->
+  <!--    -->
   <arg default="$(find ur_description)/urdf/ur.urdf.xacro" name="model"/>
 	<param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
 
@@ -32,10 +32,10 @@
     </node>
     
     <!-- rosrun image_transport republish compressed in:=/D415/color/image_aruco raw out:=/D415/color/image_aruco_raw --> 
-    <node name="republish" pkg="image_transport" type="republish" args="compressed in:=/D415/color/image_aruco raw out:=/D415/color/image_aruco_raw">
-    </node>
+    <!-- node name="republish" pkg="image_transport" type="republish" args="compressed in:=/D415/color/image_aruco/compressed raw out:=/D415/color/image_aruco_raw">
+    </node -->
     <!-- rosrun rqt_image_view rqt_image_view /D415/color/image_aruco  -->
-    <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_aruco/compressed">
+    <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_aruco_raw">
     </node>
 
 </launch>
