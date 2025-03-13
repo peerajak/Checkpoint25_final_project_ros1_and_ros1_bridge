@@ -33,7 +33,7 @@
 
   <!-- rosrun rqt_image_view rqt_image_view /wrist_rgbd_depth_sensor/image_aruco_frame   -->
   <!-- cannot view compressed image-->
-  <!-- node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_raw/compressed">
+  <!--node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_raw/compressed">
   </node-->
 
 </launch>
