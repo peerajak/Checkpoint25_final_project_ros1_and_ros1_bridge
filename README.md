@@ -79,14 +79,10 @@ pip install pycryptodomex gnupg
 
 Make sure that there is no ROS environment
 
+
+
 ```
 unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
-echo $ROS_DISTRO
-```
-expect not set.
-
-
-```
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -96,15 +92,9 @@ roslaunch launch_cp25_ros1 ros1_tf2_webbridge.launch.xml
 
 ### Terminal 4: ros2's ros1_bridge
 
-```
-unset ROS_VERSION PKG_CONFIG_PATH ROS_PYTHON_VERSION ROS_PACKAGE_PATH ROSLISP_PACKAGE_DIRECTORIES PWD ROS_DOMAIN_ID \
-ROS_ETC_DIR AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PYTHONPATH ROSCONSOLE_CONFIG_FILE LD_LIBRARY_PATH \
-ROS_LOCALHOST_ONLY SOURCE_ROS1_WS SELECTED_ROS_DISTRO ROS_ROOT ROS_DISTRO SOURCE_ROS2_WS SLOT_ROSBRIDGE_PORT
-echo $ROS_DISTRO
-```
-expect not set.
 
 ```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
@@ -180,16 +170,8 @@ pip install defusedxml
 pip install pycryptodomex gnupg
 ```
 
-Make sure that there is no ROS environment
-
 ```
 unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
-echo $ROS_DISTRO
-```
-expect not set.
-
-
-```
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -198,15 +180,9 @@ roslaunch launch_cp25_ros1 ros1_realrobot_tf2_webbridge.launch.xml
 
 ### Terminal 3 : ros1_bridge
 
-```
-unset ROS_VERSION PKG_CONFIG_PATH ROS_PYTHON_VERSION ROS_PACKAGE_PATH ROSLISP_PACKAGE_DIRECTORIES PWD ROS_DOMAIN_ID \
-ROS_ETC_DIR AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH PYTHONPATH ROSCONSOLE_CONFIG_FILE LD_LIBRARY_PATH \
-ROS_LOCALHOST_ONLY SOURCE_ROS1_WS SELECTED_ROS_DISTRO ROS_ROOT ROS_DISTRO SOURCE_ROS2_WS SLOT_ROSBRIDGE_PORT
-echo $ROS_DISTRO
-```
-expect not set.
 
 ```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
