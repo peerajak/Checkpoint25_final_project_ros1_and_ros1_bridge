@@ -83,6 +83,7 @@ Make sure that there is no ROS environment
 
 ```
 unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
+export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -95,6 +96,7 @@ roslaunch launch_cp25_ros1 ros1_tf2_webbridge.launch.xml
 
 ```
 unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
+export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
