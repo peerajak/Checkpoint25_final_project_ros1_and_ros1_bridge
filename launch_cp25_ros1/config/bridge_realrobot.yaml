@@ -2,10 +2,10 @@ topics:
   -
     topic: /tf_static
     type: tf2_msgs/msg/TFMessage
-    queue_size: 1
     qos:
       history: keep_all
-      durability: transient_local
+      reliability: reliable  # OR best_effort
+      durability: transient_local  # OR volatile
   
   - 
     topic: /tf

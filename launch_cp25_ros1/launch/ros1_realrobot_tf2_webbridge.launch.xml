@@ -21,7 +21,7 @@
 
 
   <!-- roslaunch ur_description  robot_description.launch -->
-  <arg default="$(find ur_description)/urdf/ur.urdf.xacro" name="model"/>
+  <arg default="$(find ur_description)/urdf/ur_urdf_realrobot.xacro" name="model"/>
 	<param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
 
 
@@ -29,7 +29,12 @@
   <!-- roslaunch course_web_dev_ros tf2_web.launch -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
         <remap from="/tf" to="/wrong_tf_do_not_use"/>
+        <remap from="/tf_static" to="/wrong_tf_static_do_not_use"/>
     </node>
+
+    <node pkg="tf" type="static_transform_publisher" name="aruco_link_broadcaster" args="0.09 0 0.018 0 0 0 1 rg2_gripper_base_link aruco_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="tool0_broadcaster" args="0 0 0 0.5 0.5 0.5 0.5 flange tool0 100" />
+    <node pkg="tf" type="static_transform_publisher" name="rg2_gripper_base_link_broadcaster" args="0 0 0 0.5 -0.5 0.5 0.5 tool0 rg2_gripper_base_link 100" />   
     <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     </node-->
     <node name="tf2_web_republisher" pkg="tf2_web_republisher" type="tf2_web_republisher">
