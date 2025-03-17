@@ -1,11 +1,11 @@
 topics:
-  -
-    topic: /tf_static
-    type: tf2_msgs/msg/TFMessage
-    qos:
-      history: keep_all
-      reliability: reliable  # OR best_effort
-      durability: transient_local  # OR volatile
+  # -
+  #   topic: /tf_static
+  #   type: tf2_msgs/msg/TFMessage
+  #   qos:
+  #     history: keep_all
+  #     reliability: reliable  # OR best_effort
+  #     durability: transient_local  # OR volatile
   
   - 
     topic: /tf
