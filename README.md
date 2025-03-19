@@ -1,6 +1,6 @@
 # Checkpoint25_final_project_ros1_and_ros1_bridge
-main branch
-First successful of ROS2 <-> Ros1 bridge <-> web bridge <-> website Architecture run on the construct machine
+
+ROS2 <-> Ros1 bridge <-> web bridge <-> website Architecture run on the construct machine
 
 
 This is Ros1 part of the Checkpoint 25. The repo is build on Ros1 Noetic source insallation on Ubuntu 22.04 (Jammy) along with ROS2 Humble.
