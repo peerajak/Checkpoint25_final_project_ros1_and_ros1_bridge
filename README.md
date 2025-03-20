@@ -29,6 +29,72 @@ colcon build --packages-select ros1_bridge
 git clone -b master https://github.com/ros2/ros1_bridge
 ```
 
+## Real Robot
+
+### Terminal 1: all ros2 launches
+
+Make sure that there is no ROS environment
+
+```
+echo $ROS_DISTRO
+```
+expect 
+humble
+
+
+```
+cd ~/ros2_ws
+source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_realrobot.launch.py
+```
+
+### Terminal 2: all ros1 launches
+Install dependencies
+
+```
+sudo apt update
+sudo apt install libpoco-dev liblog4cxx-dev libturbojpeg* -y
+pip install autobahn
+pip install defusedxml
+pip install pycryptodomex gnupg
+```
+
+```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
+export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
+cd ~/ros1_ws
+source ~/ros1_source_ws/devel_isolated/setup.bash 
+source ~/ros1_ws/devel/setup.bash
+roslaunch launch_cp25_ros1 ros1_realrobot_tf2_webbridge.launch.xml
+```
+
+### Terminal 3 : ros1_bridge
+
+
+```
+unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
+export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
+cd ~/ros2_ws_ros1_bridge/
+source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
+source install/setup.bash 
+ros2 run ros1_bridge parameter_bridge
+```
+
+
+### Terminal 4: Web App
+
+```
+cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_realrobot_webapp
+python3 -m http.server 7000
+```
+
+
+### Terminal 5: addresses
+
+```
+rosbridge_address
+webpage_address
+```
+
 ## simulation Robot
 
 
@@ -143,71 +209,6 @@ source ~/ros1_ws/source devel/setup.bash
 colcon build --packages-select ros1_bridge
 ```
 
-## Real Robot
-
-### Terminal 1: all ros2 launches
-
-Make sure that there is no ROS environment
-
-```
-echo $ROS_DISTRO
-```
-expect 
-humble
-
-
-```
-cd ~/ros2_ws
-source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_realrobot.launch.py
-```
-
-### Terminal 2: all ros1 launches
-Install dependencies
-
-```
-sudo apt update
-sudo apt install libpoco-dev liblog4cxx-dev libturbojpeg* -y
-pip install autobahn
-pip install defusedxml
-pip install pycryptodomex gnupg
-```
-
-```
-unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
-export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
-cd ~/ros1_ws
-source ~/ros1_source_ws/devel_isolated/setup.bash 
-source ~/ros1_ws/devel/setup.bash
-roslaunch launch_cp25_ros1 ros1_realrobot_tf2_webbridge.launch.xml
-```
-
-### Terminal 3 : ros1_bridge
-
-
-```
-unset ROS_VERSION ROS_PYTHON_VERSION  ROS_IP  ROS_DISTRO
-export ROS_MASTER_URI=http://$ROS_HOSTNAME:11311
-cd ~/ros2_ws_ros1_bridge/
-source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
-source install/setup.bash 
-ros2 run ros1_bridge parameter_bridge
-```
-
-
-### Terminal 4: Web App
-
-```
-cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_realrobot_webapp
-python3 -m http.server 7000
-```
-
-
-### Terminal 5: addresses
-
-```
-rosbridge_address
-webpage_address
-```
 
 
 # ROS1_bridge on Ubuntu Jammy with ROS2 humble, and ROS1 noetic
