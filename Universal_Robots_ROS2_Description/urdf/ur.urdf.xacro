@@ -116,7 +116,7 @@
    <!-- Peerajak Real robot here-->
    <xacro:unless value="${is_sim_robot}">
        <xacro:sensor_d415 prefix="D415" parent="base_link" >
-        <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
+        <origin xyz="-0.415 -0.375 0.31" rpy="1.57 1.197 0"/>
        </xacro:sensor_d415>
    </xacro:unless>
 

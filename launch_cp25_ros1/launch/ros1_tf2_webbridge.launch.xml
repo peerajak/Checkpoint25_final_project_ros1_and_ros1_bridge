@@ -25,7 +25,7 @@
 
   <!-- roslaunch course_web_dev_ros tf2_web.launch -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-        <remap from="/tf" to="/wrong_tf_do_not_use"/>
+        <remap from="/tf" to="/wrong_tf_do_not_use"/>   
     </node>
     <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     </node-->

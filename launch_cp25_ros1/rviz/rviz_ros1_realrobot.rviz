@@ -60,6 +60,47 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
+        D415_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        D415_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        D415_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -153,43 +194,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        wrist_rgbd_camera_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_fisheye_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_fisheye_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_left_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_left_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_rgbd_camera_right_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_rgbd_camera_right_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -203,12 +207,30 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        D415_bottom_screw_frame:
+          Value: false
+        D415_color_frame:
+          Value: false
         D415_color_optical_frame:
           Value: true
+        D415_depth_frame:
+          Value: false
+        D415_depth_optical_frame:
+          Value: false
+        D415_left_ir_frame:
+          Value: false
+        D415_left_ir_optical_frame:
+          Value: false
+        D415_link:
+          Value: false
+        D415_right_ir_frame:
+          Value: false
+        D415_right_ir_optical_frame:
+          Value: false
         aruco_frame:
           Value: true
         aruco_link:
-          Value: false
+          Value: true
         base:
           Value: false
         base_link:
@@ -221,6 +243,8 @@ Visualization Manager:
           Value: false
         ft_frame:
           Value: false
+        rg2_gripper_aruco_link:
+          Value: true
         rg2_gripper_base_link:
           Value: false
         rg2_gripper_left_finger:
@@ -246,7 +270,7 @@ Visualization Manager:
         wrist_3_link:
           Value: false
       Marker Alpha: 1
-      Marker Scale: 1
+      Marker Scale: 0.4000000059604645
       Name: TF
       Show Arrows: true
       Show Axes: true
@@ -254,9 +278,22 @@ Visualization Manager:
       Tree:
         world:
           base_link:
-            D415_color_optical_frame:
-              aruco_frame:
-                {}
+            D415_bottom_screw_frame:
+              {}
+            D415_link:
+              D415_depth_frame:
+                D415_color_frame:
+                  D415_color_optical_frame:
+                    aruco_frame:
+                      {}
+                D415_depth_optical_frame:
+                  {}
+                D415_left_ir_frame:
+                  D415_left_ir_optical_frame:
+                    {}
+                D415_right_ir_frame:
+                  D415_right_ir_optical_frame:
+                    {}
             base:
               {}
             base_link_inertia:
@@ -270,6 +307,8 @@ Visualization Manager:
                             tool0:
                               rg2_gripper_base_link:
                                 aruco_link:
+                                  {}
+                                rg2_gripper_aruco_link:
                                   {}
                                 rg2_gripper_left_finger:
                                   rg2_gripper_left_thumb:
@@ -309,7 +348,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.8273825645446777
+      Distance: 1.2755045890808105
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -325,9 +364,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7403980493545532
+      Pitch: 0.41479629278182983
       Target Frame: <Fixed Frame>
-      Yaw: 0.4303980767726898
+      Yaw: 4.073583126068115
     Saved: ~
 Window Geometry:
   Displays:
