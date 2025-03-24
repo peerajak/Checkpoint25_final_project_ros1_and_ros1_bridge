@@ -12,6 +12,10 @@
    <!-- the default value should raise an error in case this was called without defining the type -->
    <xacro:arg name="ur_type" default="ur3e"/>
 
+   <!-- Peerajak to choose camera for sim robot or real robot-->
+   <xacro:property name="is_sim_robot" value="$(arg is_sim_robot)" />
+
+
    <!-- parameters -->
    <xacro:arg name="tf_prefix" default="" />
    <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
@@ -102,9 +106,19 @@
        <!--<origin xyz="0.0 0 0.0" rpy="0 -1.57 1.57"/>-->
    </xacro:rg2_gripper>
 
-   <xacro:sensor_r430 prefix="wrist_rgbd" parent="base_link" >
-       <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
-   </xacro:sensor_r430>
+   <!-- Peerajak Sim robot here -->
+   <xacro:if value="${is_sim_robot}">
+       <xacro:sensor_r430 prefix="wrist_rgbd" parent="base_link">
+        <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
+       </xacro:sensor_r430>
+   </xacro:if>
+
+   <!-- Peerajak Real robot here-->
+   <xacro:unless value="${is_sim_robot}">
+       <xacro:sensor_d415 prefix="D415" parent="base_link" >
+        <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
+       </xacro:sensor_d415>
+   </xacro:unless>
 
    <!--<xacro:sensor_r430 prefix="camera" parent="base_link" >
        <origin xyz="0.8 0.5 0.2" rpy="0 ${pi/6} ${pi}"/>

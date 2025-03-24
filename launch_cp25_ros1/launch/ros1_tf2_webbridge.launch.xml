@@ -10,8 +10,9 @@
 
 
   <!-- roslaunch ur_description  robot_description.launch   -->
+  <arg name="is_sim_robot" default="true" />
   <arg default="$(find ur_description)/urdf/ur.urdf.xacro" name="model"/>
-	<param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
+	<param command="$(find xacro)/xacro $(arg model) is_sim_robot:=$(arg is_sim_robot)" name="robot_description"/>
 
   <!-- roslaunch course_web_dev_ros  web2.launch  -->
   <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
