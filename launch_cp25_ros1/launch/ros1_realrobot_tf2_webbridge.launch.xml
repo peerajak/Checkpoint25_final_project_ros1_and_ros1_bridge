@@ -34,12 +34,13 @@
         <!--remap from="/tf_static" to="/wrong_tf_static_do_not_use"/-->
     </node>
 
-    <node pkg="tf" type="static_transform_publisher" name="aruco_link_broadcaster" args="0.09 0 0.018 0 0 0 1 rg2_gripper_base_link aruco_link 1000" />
-    <!--node pkg="tf" type="static_transform_publisher" name="D415_depth_frame_broadcaster" args="0 0 0 0 0 0 1 D415_link D415_depth_frame 1000" />
+    <!--node pkg="tf" type="static_transform_publisher" name="aruco_link_broadcaster" args="0.09 0 0.018 0 0 0 1 rg2_gripper_base_link aruco_link 1000" /-->
+    <node pkg="tf" type="static_transform_publisher" name="D415_link_broadcaster" args="-0.415 -0.375 0.31 1.57 1.197 0 base_link D415_link 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="D415_depth_frame_broadcaster" args="0 0 0 0 0 0 1 D415_link D415_depth_frame 1000" />
     <node pkg="tf" type="static_transform_publisher" name="D415_depth_optical_frame_broadcaster" args="0 0 0 -0.5 0.5 -0.5 0.5 D415_depth_frame D415_depth_optical_frame 1000" />
     <node pkg="tf" type="static_transform_publisher" name="D415_color_frame_broadcaster" args="0.00022346555488184094 0.015059830620884895 0.00008089655602816492 -0.0005824033287353814 0.000013980506082589272 -0.0006499985465779901 1.0 D415_link D415_color_frame 1000" />
-    <node pkg="tf" type="static_transform_publisher" name="D415_color_optical_frame_broadcaster" args="0 0 0 -0.5 0.5 -0.5 0.5 D415_color_frame D415_color_optical_frame 100" /-->
-    <node pkg="tf" type="static_transform_publisher" name="D415_link_broadcaster" args="-0.415 -0.375 0.31 1.57 1.197 0 base_link D415_link 100"/>
+    <node pkg="tf" type="static_transform_publisher" name="D415_color_optical_frame_broadcaster" args="0 0 0 -0.5 0.5 -0.5 0.5 D415_color_frame D415_color_optical_frame 100" />
+    
     <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0 0 0 0 1 world base_link 1000" /> 
     <node pkg="tf" type="static_transform_publisher" name="base_broadcaster" args="0 0 0 0 0 1 0 base_link base 1000" /> 
     <node pkg="tf" type="static_transform_publisher" name="base_link_inertia_broadcaster" args="0 0 0 0 0 1 0 base_link base_link_inertia 1000" /> 
@@ -61,5 +62,7 @@
     <node name="republish" pkg="image_transport" type="republish" args="compressed in:=/D415/color/image_aruco raw out:=/D415/color/image_aruco_raw">
     </node>
 
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find launch_cp25_ros1)/rviz/rviz_ros1_realrobot.rviz">
+    </node>
 
 </launch>

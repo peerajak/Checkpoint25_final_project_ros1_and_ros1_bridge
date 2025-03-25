@@ -98,40 +98,7 @@ webpage_address
 ## simulation Robot
 
 
-### Terminal 1: simulator
-
-Make sure that there is no ROS environment
-
-```
-echo $ROS_DISTRO
-```
-expect not set.
-
-
-```
-
-cd ~/ros2_ws
-source ~/ros2_ws/install/setup.bash
-ros2 launch the_construct_office_gazebo starbots_ur3e.launch.xml
-```
-
-### Terminal 2: all ros2 launches
-
-Make sure that there is no ROS environment
-
-```
-echo $ROS_DISTRO
-```
-expect 
-humble
-
-
-```
-cd ~/ros2_ws
-source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
-```
-
-### Terminal 3: all ros1 launch
+### Terminal 1: all ros1 launch
 
 Install dependencies
 
@@ -156,8 +123,7 @@ source ~/ros1_ws/devel/setup.bash
 roslaunch launch_cp25_ros1 ros1_tf2_webbridge.launch.xml
 ```
 
-
-### Terminal 4: ros2's ros1_bridge
+### Terminal 2: ros2's ros1_bridge
 
 
 ```
@@ -168,6 +134,41 @@ source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/set
 source install/setup.bash 
 ros2 run ros1_bridge parameter_bridge
 ```
+
+
+### Terminal 3: simulator
+
+Make sure that there is no ROS environment
+
+```
+echo $ROS_DISTRO
+```
+expect not set.
+
+
+```
+
+cd ~/ros2_ws
+source ~/ros2_ws/install/setup.bash
+ros2 launch the_construct_office_gazebo starbots_ur3e.launch.xml
+```
+
+### Terminal 4: all ros2 launches
+
+Make sure that there is no ROS environment
+
+```
+echo $ROS_DISTRO
+```
+expect 
+humble
+
+
+```
+cd ~/ros2_ws
+source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
+```
+
 
 ### Terminal 5: Web App
 
