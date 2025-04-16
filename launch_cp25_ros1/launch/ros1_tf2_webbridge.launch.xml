@@ -25,12 +25,14 @@
 
   <!-- roslaunch course_web_dev_ros tf2_web.launch -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="/use_sim_time" value="true"/>
         <remap from="/tf" to="/wrong_tf_do_not_use"/>   
-        <remap from="/tf_static" to="/wrong_tf_static_do_not_use"/>
+        <!-- remap from="/tf_static" to="/wrong_tf_static_do_not_use"/-->
     </node>
     <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     </node-->
     <node name="tf2_web_republisher" pkg="tf2_web_republisher" type="tf2_web_republisher">
+        <param name="/use_sim_time" value="true"/>
     </node>
 
   <!-- rosrun rqt_image_view rqt_image_view /wrist_rgbd_depth_sensor/image_aruco_frame   -->
