@@ -107,11 +107,17 @@
    </xacro:rg2_gripper>
 
    <!-- Peerajak Sim robot here -->
+   <!-- peerajak this is originalxacro:if value="${is_sim_robot}">
+       <xacro:sensor_r430 prefix="wrist_rgbd" parent="base_link">
+        <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
+       </xacro:sensor_r430>
+   </xacro:if -->
+
    <xacro:if value="${is_sim_robot}">
        <xacro:sensor_r430 prefix="wrist_rgbd" parent="base_link">
         <origin xyz="-0.25 -0.3 0.2" rpy="0 ${pi/3} ${pi/2}"/>
        </xacro:sensor_r430>
-   </xacro:if>
+   </xacro:if> <!-- peerajak this is testing value-->
 
    <!-- Peerajak Real robot here-->
    <xacro:unless value="${is_sim_robot}">
