@@ -27,6 +27,11 @@ topics:
     type: sensor_msgs/msg/Image
     queue_size: 1
 
+  -
+    topic:  /wrist_rgbd_depth_sensor/image_hole_frame
+    type: sensor_msgs/msg/Image
+    queue_size: 1
+
   - topic: /moveit_goto_pose
     type: geometry_msgs/msg/Pose
     queue_size: 1
