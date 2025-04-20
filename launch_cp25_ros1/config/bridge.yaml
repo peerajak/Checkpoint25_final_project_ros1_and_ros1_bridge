@@ -48,3 +48,7 @@ services_1_to_2:
   -
     service: /tf2_pub_service # ROS 2 service name
     type: std_srvs/srv/SetBool  # The ROS 2 service type name
+
+  -
+    service: /change_hole_mode_service # ROS 2 service name
+    type: std_srvs/srv/SetBool  # The ROS 2 service type name 
