@@ -36,7 +36,7 @@
     </node>
 
   <!-- rosrun rqt_image_view rqt_image_view /wrist_rgbd_depth_sensor/image_aruco_frame   -->
-  <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/wrist_rgbd_depth_sensor/image_aruco_frame">
+  <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/wrist_rgbd_depth_sensor/image_hole_frame">
   </node>
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find launch_cp25_ros1)/rviz/rviz_ros1_simrobot.rviz">
