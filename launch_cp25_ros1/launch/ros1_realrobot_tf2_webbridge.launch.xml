@@ -56,11 +56,13 @@
     </node>
 
      <!-- rosrun rqt_image_view rqt_image_view /D415/color/image_aruco  -->
-    <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_aruco_raw">
+    <node name="rqt_image_view" pkg="rqt_image_view"  type="rqt_image_view" args="/D415/color/image_hole_raw">
     </node>
        
     <!-- rosrun image_transport republish compressed in:=/D415/color/image_aruco raw out:=/D415/color/image_aruco_raw --> 
     <node name="republish" pkg="image_transport" type="republish" args="compressed in:=/D415/color/image_aruco raw out:=/D415/color/image_aruco_raw">
+    <!-- rosrun image_transport republish compressed in:=/D415/color/image_hole raw out:=/D415/color/image_hole_raw-->
+    <!-- node name="republish" pkg="image_transport" type="republish" args="compressed in:=/D415/color/image_hole raw out:=/D415/color/image_hole_raw"-->
     </node>
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find launch_cp25_ros1)/rviz/rviz_ros1_realrobot.rviz">

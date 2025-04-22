@@ -29,8 +29,8 @@ topics:
     queue_size: 1
 
   -
-    topic:  /D415/color/image_hole/compressed
-    type: sensor_msgs/msg/CompressedImage
+    topic:  /D415/color/image_hole_raw
+    type: sensor_msgs/msg/Image
     queue_size: 1
 
   - topic: /moveit_goto_pose
