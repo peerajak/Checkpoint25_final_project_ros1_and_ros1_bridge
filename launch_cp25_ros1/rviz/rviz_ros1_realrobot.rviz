@@ -9,7 +9,7 @@ Panels:
         - /RobotModel1
         - /TF1
         - /TF1/Frames1
-      Splitter Ratio: 0.5
+      Splitter Ratio: 0.7764706015586853
     Tree Height: 558
   - Class: rviz/Selection
     Name: Selection
@@ -60,47 +60,6 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
-        D415_bottom_screw_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_color_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_color_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_depth_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_left_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_left_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        D415_right_ir_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        D415_right_ir_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -131,11 +90,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rg2_gripper_aruco_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         rg2_gripper_base_link:
           Alpha: 1
           Show Axes: false
@@ -166,6 +120,47 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        sol_D415_bottom_screw_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_color_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_color_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_left_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_left_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sol_D415_right_ir_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sol_D415_right_ir_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         tool0:
           Alpha: 1
           Show Axes: false
@@ -207,29 +202,9 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        D415_bottom_screw_frame:
-          Value: false
-        D415_color_frame:
-          Value: false
         D415_color_optical_frame:
           Value: true
-        D415_depth_frame:
-          Value: false
-        D415_depth_optical_frame:
-          Value: false
-        D415_left_ir_frame:
-          Value: false
-        D415_left_ir_optical_frame:
-          Value: false
-        D415_link:
-          Value: false
-        D415_right_ir_frame:
-          Value: false
-        D415_right_ir_optical_frame:
-          Value: false
         aruco_frame:
-          Value: true
-        aruco_link:
           Value: true
         base:
           Value: false
@@ -237,13 +212,15 @@ Visualization Manager:
           Value: true
         base_link_inertia:
           Value: false
+        camera_solution_frame_check:
+          Value: true
         flange:
           Value: false
         forearm_link:
           Value: false
         ft_frame:
           Value: false
-        rg2_gripper_aruco_link:
+        hole_frame:
           Value: true
         rg2_gripper_base_link:
           Value: false
@@ -256,6 +233,26 @@ Visualization Manager:
         rg2_gripper_right_thumb:
           Value: false
         shoulder_link:
+          Value: false
+        sol_D415_bottom_screw_frame:
+          Value: false
+        sol_D415_color_frame:
+          Value: false
+        sol_D415_color_optical_frame:
+          Value: true
+        sol_D415_depth_frame:
+          Value: false
+        sol_D415_depth_optical_frame:
+          Value: false
+        sol_D415_left_ir_frame:
+          Value: false
+        sol_D415_left_ir_optical_frame:
+          Value: false
+        sol_D415_link:
+          Value: true
+        sol_D415_right_ir_frame:
+          Value: false
+        sol_D415_right_ir_optical_frame:
           Value: false
         tool0:
           Value: false
@@ -278,22 +275,12 @@ Visualization Manager:
       Tree:
         world:
           base_link:
-            D415_bottom_screw_frame:
-              {}
-            D415_link:
-              D415_depth_frame:
-                D415_color_frame:
-                  D415_color_optical_frame:
-                    aruco_frame:
-                      {}
-                D415_depth_optical_frame:
+            D415_color_optical_frame:
+              aruco_frame:
+                camera_solution_frame_check:
                   {}
-                D415_left_ir_frame:
-                  D415_left_ir_optical_frame:
-                    {}
-                D415_right_ir_frame:
-                  D415_right_ir_optical_frame:
-                    {}
+              hole_frame:
+                {}
             base:
               {}
             base_link_inertia:
@@ -306,10 +293,6 @@ Visualization Manager:
                           flange:
                             tool0:
                               rg2_gripper_base_link:
-                                aruco_link:
-                                  {}
-                                rg2_gripper_aruco_link:
-                                  {}
                                 rg2_gripper_left_finger:
                                   rg2_gripper_left_thumb:
                                     {}
@@ -318,6 +301,21 @@ Visualization Manager:
                                     {}
                           ft_frame:
                             {}
+            sol_D415_bottom_screw_frame:
+              {}
+            sol_D415_link:
+              sol_D415_color_frame:
+                sol_D415_color_optical_frame:
+                  {}
+              sol_D415_depth_frame:
+                sol_D415_depth_optical_frame:
+                  {}
+                sol_D415_left_ir_frame:
+                  sol_D415_left_ir_optical_frame:
+                    {}
+                sol_D415_right_ir_frame:
+                  sol_D415_right_ir_optical_frame:
+                    {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -364,9 +362,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.41479629278182983
+      Pitch: 0.33479630947113037
       Target Frame: <Fixed Frame>
-      Yaw: 4.073583126068115
+      Yaw: 3.528582811355591
     Saved: ~
 Window Geometry:
   Displays:

@@ -45,7 +45,7 @@
         </gazebo>
 
         <!-- Aruco Marker -->
-        <joint name="${prefix}_aruco_joint" type="fixed">
+        <!--joint name="${prefix}_aruco_joint" type="fixed">
             <origin xyz="0.065 0.0 0.025" rpy="0.0 0.0 0.0" />
             <parent link="${prefix}_base_link"/>
             <child link="${prefix}_aruco_link"/>
@@ -62,19 +62,11 @@
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
                 <geometry>
                     <mesh filename="package://rg2_gripper_description/meshes/arucomarker45mm.dae" scale="1.0 1.0 1.0"/>
-                    <!--<-box size="0.1 0.1 0.01" />-->
+
                 </geometry>
             </visual>
 
-            <!--<collision>
-                <origin xyz="0.0 0 0" rpy="0 0 0" />
-                <geometry>
-                    <mesh filename="package://rg2_gripper_description/meshes/aruco_marker1.dae" scale="1.0 1.0 1.0"/>
-            
-                </geometry>
-            </collision>-->
-
-        </link>
+        </link-->
 
         <!--<xacro:macro name="mimic_joint_plugin_gazebo" params="parent_joint mimic_joint has_pid:=false multiplier:=1.0 offset:=0 sensitiveness:=0.0 max_effort:=1.0 robot_namespace:=''">
             <gazebo>

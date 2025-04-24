@@ -120,8 +120,9 @@
    </xacro:if> <!-- peerajak this is testing value-->
 
    <!-- Peerajak Real robot here-->
+   <!-- Peerajak Do not to this. Because this is the solution. It will mess with the answer-->
    <xacro:unless value="${is_sim_robot}">
-       <xacro:sensor_d415 prefix="D415" parent="base_link" >
+       <xacro:sensor_d415 prefix="sol_D415" parent="base_link" >
         <origin xyz="-0.415 -0.375 0.31" rpy="1.57 1.197 0"/>
        </xacro:sensor_d415>
    </xacro:unless>
