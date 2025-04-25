@@ -310,4 +310,7 @@ universal_robot_ros2
 vision_opencv
 
 
+## How to finetune the Camera Calibration
 
+Given known answer of aruco_link, or camera_pose, find a constant s such that the product of s on intrincsinc camera matrix, K*s, get the best translation error.
+For rotation error, simply rotate the hand in such a way that it parallel with camera x axis.
