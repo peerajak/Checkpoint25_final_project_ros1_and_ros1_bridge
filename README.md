@@ -43,7 +43,7 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash
 ros2 launch the_construct_office_gazebo starbots_ur3e.launch.xml
@@ -60,7 +60,7 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros2_ws
 source ~/ros2_ws/install/setup.bash ; ros2 launch launch_cp25 ros2_sim.launch.py
 ```
@@ -76,7 +76,7 @@ expect not set.
 
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros1_ws
 source ~/ros1_source_ws/devel_isolated/setup.bash 
 source ~/ros1_ws/devel/setup.bash
@@ -92,7 +92,7 @@ echo $ROS_DISTRO
 expect not set.
 
 ```
-export ROS_DOMAIN_ID=2
+
 cd ~/ros2_ws_ros1_bridge/
 source ~/ros1_source_ws/devel_isolated/setup.bash ; source ~/ros2_ws/install/setup.bash
 source install/setup.bash 
@@ -102,7 +102,7 @@ ros2 run ros1_bridge parameter_bridge
 ### Terminal 5: Web App
 
 ```
-cd ~/MyRobotics/Checkpoint25/Checkpoint25_final_project/cp25_webapp
+cd ~/ros2_ws/src/Checkpoint25_final_project/cp25_webapp/
 python3 -m http.server 7000
 ```
 
