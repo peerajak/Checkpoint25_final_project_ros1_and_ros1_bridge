@@ -45,7 +45,7 @@
         </gazebo>
 
         <!-- Aruco Marker -->
-        <!--joint name="${prefix}_aruco_joint" type="fixed">
+        <joint name="${prefix}_aruco_joint" type="fixed">
             <origin xyz="0.065 0.0 0.025" rpy="0.0 0.0 0.0" />
             <parent link="${prefix}_base_link"/>
             <child link="${prefix}_aruco_link"/>
@@ -66,7 +66,7 @@
                 </geometry>
             </visual>
 
-        </link-->
+        </link>
 
         <!--<xacro:macro name="mimic_joint_plugin_gazebo" params="parent_joint mimic_joint has_pid:=false multiplier:=1.0 offset:=0 sensitiveness:=0.0 max_effort:=1.0 robot_namespace:=''">
             <gazebo>
