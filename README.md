@@ -236,7 +236,7 @@ git clone -b master https://github.com/ros2/ros1_bridge.git
 
 ```
 cd ros2_ws_ros1_bridge
-source $ROS1_INSTALL_PATH/setup.bash; source $ROS2_INSTALL_PATH/setup.bash
+source \$ROS1_INSTALL_PATH/setup.bash; source \$ROS2_INSTALL_PATH/setup.bash
 colcon build --packages-select ros1_bridge
 ```
  
